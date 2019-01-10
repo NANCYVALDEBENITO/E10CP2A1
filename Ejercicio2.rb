@@ -13,7 +13,7 @@ end
 
 class Rectangulo
   include Formula
-  attr_accessor :l1, :l2
+  attr_reader :l1, :l2
   def initialize(l1, l2)
     @l1 = l1
     @l2 = l2
@@ -27,7 +27,7 @@ end
 
 class Cuadrado
   include Formula
-  attr_accessor :l1, :l2
+  attr_reader :l1, :l2
   def initialize(l1)
     @l1 = l1
     @l2 = l1
