@@ -1,40 +1,46 @@
 module Formula
-  def perimetro(l1, l2)
-    2 * (l1 + l2)
+  attr_accessor :l1, :l2, :pe, :ar
+  def perimetro
+    @pe = 2 * (@l1 + @l2)
+    puts @pe
   end
 
-  def area(l1, l2)
-    l1 * l2
+  def area
+    @ar = l1 * l2
+    puts @ar
   end
 end
 
 class Rectangulo
   include Formula
-  def initialize(largo, ancho)
-    @largo = largo
-    @ancho = ancho
+  attr_accessor :l1, :l2
+  def initialize(l1, l2)
+    @l1 = l1
+    @l2 = l2
   end
 
   def lados
-    puts @largo
-    puts @ancho
+    puts @l1
+    puts @l2
   end
 end
 
 class Cuadrado
   include Formula
-  def initialize(lado)
-    @lado = lado
+  attr_accessor :l1, :l2
+  def initialize(l1)
+    @l1 = l1
+    @l2 = l1
   end
 
   def lados
-    puts @lado
+    puts @l1
   end
 end
 
-x = Cuadrado.new(3)
-y = Rectangulo.new(4, 3)
-puts x.perimetro(3, 3)
-puts x.area(3, 3)
-puts y.perimetro(4, 3)
-puts y.area(4, 3)
+Rectangulo.new(4, 3).lados
+Rectangulo.new(4, 3).perimetro
+Rectangulo.new(4, 3).area
+Cuadrado.new(3).lados
+Cuadrado.new(3).perimetro
+Cuadrado.new(3).area
